@@ -1,0 +1,97 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#f5f5dc;
+    color: #333;
+}
+
+/* Title */
+header {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: crimson;
+    margin-top: 150px;
+}
+
+/* Calendar */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    margin: auto;
+    max-width: 800px;
+    margin-top: 10px;
+}
+
+
+/* Boxes */
+.day {
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
+}
+
+.day:hover {
+    transform: scale(1.1);
+}
+ .day.large {
+    grid-row: span 2;
+ }
+
+ .day.large1 {
+    grid-column: span 2;
+ }
+
+.big-day {
+    grid-column: span 2;
+    grid-row: span 2;
+    font-size: 2rem;
+}
+
+
+.day.locked {
+    background-color: rgba(128, 0, 0, 0.8);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+.day.open {
+    background-color: green; 
+    color: white; 
+    font-size: 1.5rem; 
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .calendar {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .big-day {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+@media (max-width: 400px) {
+    .calendar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
